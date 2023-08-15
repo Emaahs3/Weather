@@ -15,7 +15,7 @@ class _HomeWeatherState extends State<HomeWeather> {
         body: Padding(
           padding: const EdgeInsets.only(top: 32.0, left: 8.0, right: 8.0),
           child: Column(
-            children: [Row(), const Text("Météo")],
+            children: [Row(), const Text("Météoubh")],
           ),
         ),
       ),
