@@ -77,18 +77,21 @@ class _RegisterState extends State<Register> {
               const SizedBox(
                 height: 80,
               ),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const HomeWeather()));
-                },
-                style: ElevatedButton.styleFrom(
-                  minimumSize: Size(MediaQuery.of(context).size.width / 2,
-                      48), // Adjust the width and height as needed
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const HomeWeather()));
+                  },
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: const Size(double.infinity,
+                        48), // Adjust the width and height as needed
+                  ),
+                  child: const Text("Commencer"),
                 ),
-                child: const Text("Commencer"),
               )
             ],
           )),

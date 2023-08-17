@@ -14,14 +14,22 @@ class _HomeWeatherState extends State<HomeWeather> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-            backgroundColor: Constant.whiteColor,
-            elevation: 0,
-            leading: IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.menu,
-                  color: Constant.blackColor,
-                ))),
+          actions: [
+            IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.dark_mode),
+              color: Constant.blackColor,
+            )
+          ],
+          backgroundColor: Constant.whiteColor,
+          elevation: 0,
+          leading: IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.menu,
+                color: Constant.blackColor,
+              )),
+        ),
         body: Padding(
           padding: const EdgeInsets.only(
             top: 32.0,
@@ -31,10 +39,12 @@ class _HomeWeatherState extends State<HomeWeather> {
           child: Column(
             children: [
               Row(),
-              const Text(
-                "Météoubh",
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.w300),
-              ),
+              TextButton(
+                  onPressed: () {},
+                  child: const Text(
+                    "Météoubh",
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.w300),
+                  )),
               const Padding(
                 padding: EdgeInsets.all(14.0),
                 child: Text(
@@ -46,12 +56,12 @@ class _HomeWeatherState extends State<HomeWeather> {
                 padding: const EdgeInsets.all(8.0),
                 child: Image.asset(
                   "assets/sun.png",
-                  width: 270,
-                  height: 270,
+                  width: 200,
+                  height: 200,
                 ),
               ),
               const Padding(
-                padding: EdgeInsets.all(14.0),
+                padding: EdgeInsets.all(10.0),
                 child: Text(
                   "22°C",
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
@@ -64,8 +74,21 @@ class _HomeWeatherState extends State<HomeWeather> {
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.w300),
                 ),
               ),
+              const Padding(
+                padding: EdgeInsets.all(5.0),
+                child: Text(
+                  "WASIM",
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+                ),
+              ),
+              const Divider(
+                indent: 140,
+                endIndent: 140,
+                height: 20,
+                thickness: 2,
+              ),
               Padding(
-                padding: const EdgeInsets.only(top: 18.0, left: 10, right: 10),
+                padding: const EdgeInsets.only(top: 22.0, left: 10, right: 10),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -84,6 +107,11 @@ class _HomeWeatherState extends State<HomeWeather> {
                         ),
                       ],
                     ),
+                    Container(
+                      width: 2,
+                      height: 30,
+                      color: Colors.grey,
+                    ),
                     Column(
                       children: const [
                         Icon(Icons.thermostat),
@@ -98,6 +126,11 @@ class _HomeWeatherState extends State<HomeWeather> {
                               fontSize: 26, fontWeight: FontWeight.w300),
                         ),
                       ],
+                    ),
+                    Container(
+                      width: 2,
+                      height: 30,
+                      color: Colors.grey,
                     ),
                     Column(
                       children: const [
