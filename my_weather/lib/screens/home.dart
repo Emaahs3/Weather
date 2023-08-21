@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_weather/constants/constant.dart';
+import 'package:my_weather/screens/register.dart';
 
 class HomeWeather extends StatefulWidget {
   const HomeWeather({super.key});
@@ -9,6 +10,9 @@ class HomeWeather extends StatefulWidget {
 }
 
 class _HomeWeatherState extends State<HomeWeather> {
+  bool dismissible = false;
+  String city = "Météoubh";
+  String listCity = "Calavi";
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -17,16 +21,19 @@ class _HomeWeatherState extends State<HomeWeather> {
           actions: [
             IconButton(
               onPressed: () {},
-              icon: Icon(Icons.dark_mode),
+              icon: const Icon(Icons.dark_mode),
               color: Constant.blackColor,
             )
           ],
           backgroundColor: Constant.whiteColor,
           elevation: 0,
           leading: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Register()));
+              },
               icon: const Icon(
-                Icons.menu,
+                Icons.arrow_back_rounded,
                 color: Constant.blackColor,
               )),
         ),
@@ -40,10 +47,46 @@ class _HomeWeatherState extends State<HomeWeather> {
             children: [
               Row(),
               TextButton(
-                  onPressed: () {},
-                  child: const Text(
-                    "Météoubh",
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.w300),
+                  onPressed: () {
+                    showModalBottomSheet(
+                        isDismissible: true,
+                        context: context,
+                        builder: (BuildContext context) {
+                          return ListView.builder(
+                            itemCount: 25,
+                            itemBuilder: (context, index) {
+                              return Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  TextButton(
+                                    child: Text(
+                                      listCity,
+                                      style: const TextStyle(
+                                          color: Color.fromARGB(
+                                              255, 138, 141, 142)),
+                                    ),
+                                    onPressed: () {
+                                      setState(() {
+                                        dismissible = true;
+                                        city = listCity;
+                                      });
+                                    },
+                                  ),
+                                  const Divider(
+                                    thickness: 2,
+                                    height: 0,
+                                  )
+                                ],
+                              );
+                            },
+                          );
+                        });
+                  },
+                  child: Text(
+                    city,
+                    style: const TextStyle(
+                        fontSize: 24, fontWeight: FontWeight.w300),
                   )),
               const Padding(
                 padding: EdgeInsets.all(14.0),
