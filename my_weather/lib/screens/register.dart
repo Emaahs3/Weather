@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_weather/constants/constant.dart';
 import 'package:my_weather/screens/home.dart';
+import 'package:provider/provider.dart';
 
 class Register extends StatefulWidget {
   const Register({super.key});
@@ -14,7 +15,6 @@ class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Constant.whiteColor,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.only(top: 32.0, left: 8.0, right: 8.0),

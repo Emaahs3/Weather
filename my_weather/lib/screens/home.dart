@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_weather/constants/constant.dart';
 import 'package:my_weather/screens/register.dart';
+import 'package:provider/provider.dart';
 
 class HomeWeather extends StatefulWidget {
   const HomeWeather({super.key});
