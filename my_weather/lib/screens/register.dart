@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_weather/constants/constant.dart';
 import 'package:my_weather/screens/home.dart';
 import 'package:provider/provider.dart';
+import 'package:adaptive_theme/adaptive_theme.dart';
 
 class Register extends StatefulWidget {
   const Register({super.key});
@@ -81,10 +82,8 @@ class _RegisterState extends State<Register> {
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const HomeWeather()));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => HomeWeather()));
                   },
                   style: ElevatedButton.styleFrom(
                     minimumSize: const Size(double.infinity,
